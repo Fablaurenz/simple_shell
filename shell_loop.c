@@ -96,7 +96,8 @@ void find_cmd(info_t *info)
 	}
 	for (i = 0, k = 0; info->arg[i]; i++)
 		if (!is_delim(info->arg[i], " \t\n"))
-			k++; if (!k)
+			k++;
+	if (!k)
 		return;
 
 	path = find_path(info, _getenv(info, "PATH="), info->argv[0]);
